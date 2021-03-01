@@ -1,5 +1,5 @@
-import pyautogui, time, sys
-from colorama import Fore,Style
+import pyautogui, time, keyboard
+from colorama import Fore, Style
 
 title = Style.BRIGHT + Fore.GREEN + """                                        
 
@@ -10,10 +10,9 @@ title = Style.BRIGHT + Fore.GREEN + """
                                     ┃╭━╮┃╰╯┃╰┫╰╯┃╰━┫╰┫┃╰━┫╭╮┫┃━┫┃
                                     ╰╯╱╰┻━━┻━┻━━┻━━┻━┻┻━━┻╯╰┻━━┻╯
 
-(made by: ♛staMp1xel♛#1358    ❤️❤  ❤️❤   ❤️)
+(made by: ♛staMp1xel♛#1358)
 """
 print(title)
-
 
 while True:
     infinite = input("Would you like the number of clicks be infinite or not (Y/N)").upper()
@@ -56,7 +55,8 @@ while True:
                 continue
             else:
                 break
-        print("Press Ctrl+C to terminate...")
+        print("Press and hold 'x' for about 2 seconds to terminate auto clicker.")
+        time.sleep(3)
         print("Auto clicking begins in 3...")
         time.sleep(1)
         print("2...")
@@ -65,14 +65,19 @@ while True:
         time.sleep(1)
         print("Auto clicking begins now!")
         # pyautogui.click(clicks=float("inf"))
-        try:
-            while True:
-                pyautogui.click()
-                time.sleep(betweenClicks)
-        except KeyboardInterrupt:
-            sys.exit()
+
+        while True:
+            pyautogui.click()
+            time.sleep(betweenClicks)
+            try:
+                if keyboard.is_pressed("x"):
+                    print("You pressed a key, auto clicker terminated.")
+                    break
+            except:
+                pass
+
+
     elif infinite != "N" or "Y":
         print("Please do not input anything other then N/Y")
         continue
-
 
