@@ -1,5 +1,5 @@
 ## General info
-This is an auto clicker I made with Python. If you want to try it.
+This is an auto clicker I made with Python. Give it a try!
 ## Usage
 Run this command in CMD, terminal or PowerShell (if you don't already have the following modules installed):
 ```
