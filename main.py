@@ -1,18 +1,9 @@
-import pyautogui, time, keyboard
-from colorama import Fore, Style
+import time, keyboard
+from pynput.mouse import Button, Controller
 
-title = Style.BRIGHT + Fore.GREEN + """                                        
+print("made by: ♛staMp1xel♛#1358")
 
-                                    ╭━━━╮╱╱╭╮╱╱╱╱╱╱╭╮╱╱╱╱╭╮
-                                    ┃╭━╮┃╱╭╯╰╮╱╱╱╱╱┃┃╱╱╱╱┃┃
-                                    ┃┃╱┃┣╮┣╮╭╋━━┳━━┫┃╭┳━━┫┃╭┳━━┳━╮
-                                    ┃╰━╯┃┃┃┃┃┃╭╮┃╭━┫┃┣┫╭━┫╰╯┫┃━┫╭╯
-                                    ┃╭━╮┃╰╯┃╰┫╰╯┃╰━┫╰┫┃╰━┫╭╮┫┃━┫┃
-                                    ╰╯╱╰┻━━┻━┻━━┻━━┻━┻┻━━┻╯╰┻━━┻╯
-
-(made by: ♛staMp1xel♛#1358)
-"""
-print(title)
+mouse = Controller()
 
 while True:
     infinite = input("Would you like the number of clicks be infinite or not (Y/N)").upper()
@@ -41,9 +32,16 @@ while True:
         print("1...")
         time.sleep(1)
         print("Auto clicking begins now!")
+
         for i in range(0, clicks):
-            pyautogui.click()
+            mouse.click(Button.left)
             time.sleep(betweenClicks)
+            try:
+                if keyboard.is_pressed("x"):
+                    print("You pressed a key, auto clicker terminated.")
+                    break
+            except:
+                pass
 
     elif infinite == "Y":
         # clicks = float("inf")
@@ -67,7 +65,7 @@ while True:
         # pyautogui.click(clicks=float("inf"))
 
         while True:
-            pyautogui.click()
+            mouse.click(Button.left)
             time.sleep(betweenClicks)
             try:
                 if keyboard.is_pressed("x"):
@@ -80,4 +78,3 @@ while True:
     elif infinite != "N" or "Y":
         print("Please do not input anything other then N/Y")
         continue
-

@@ -5,9 +5,6 @@ Run this command in CMD, terminal or PowerShell (if you don't already have the f
 ```
 pip install pyautogui
 
-pip install colorama
-
 pip install keyboard
-
 ```
 I recommend testing with this click speed tester: https://clickspeedtest.com
