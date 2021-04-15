@@ -1,7 +1,7 @@
 import time, keyboard
 from pynput.mouse import Button, Controller
 
-print("made by: ♛staMp1xel♛#1358")
+print("made by: stampixeL#1337")
 
 mouse = Controller()
 
